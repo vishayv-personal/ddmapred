@@ -1,0 +1,47 @@
+Metadata-Version: 1.0
+Name: smhasher
+Version: 0.136.2
+Summary: Python extension for smhasher hash functions
+Home-page: http://github.com/phensley/python-smhasher
+Author: Patrick Hensley
+Author-email: spaceboy@indirect.com
+License: UNKNOWN
+Description: 
+        `python-smhasher` is a Python 2.x/3.x wrapper for the 
+        [SMHasher](http://code.google.com/p/smhasher/) non-cryptographic hashing
+        library.  It currently supports the MurmurHash3 64-/128-bit and x86/x64
+        variants.
+        
+        License: MIT License
+        
+        Usage
+        -----
+        
+            >>> import smhasher
+            >>> [k for k in dir(smhasher) if k[0] == 'm']
+            ['murmur3_x64_128', 'murmur3_x64_64', 'murmur3_x86_128', 'murmur3_x86_64']
+        
+            >>> smhasher.murmur3_x86_128('hello')
+            213030289162235495270783145757721615258L
+        
+            >>> seed = 1138
+            >>> smhasher.murmur3_x86_128('hello', seed)
+            94758481705480737162820094006203962724L
+        
+        
+Keywords: hash,hashing,smhasher
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.4
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
