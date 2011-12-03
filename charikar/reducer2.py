@@ -66,12 +66,4 @@ for line in sys.stdin:
 
 	# assumes each file will occur in chunks
 print_kv(dict_fs)
-"""
-for fil in dict_fs:
-	l = dict_fs[fil]
-	#for i in range(len(l)):
-	sketch_str = ''.join(l)
-	s = "%s\t%s,%s"%(str(1),fil,sketch_str)
-	#s = "%s\t%s,%s"%(fil,i,l[i])
-	print s
-"""	
+

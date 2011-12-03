@@ -44,7 +44,6 @@ for line in sys.stdin:
 	# remove punctuations
 	content = test_re(content)
 	# split into an array of words 	
- 	
 	content_arr = content.split()
 	shingle = ""
 	# if line len is less than 8 then just emit the whole line as shingle 

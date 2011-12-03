@@ -25,7 +25,3 @@ for line in sys.stdin:
 		continue
 	s = "%s\t%s,%s"%(file_id,bit,score)
 	print s
- 
-	
-	
-	
