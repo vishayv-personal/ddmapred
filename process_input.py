@@ -11,6 +11,7 @@ KEY_VALUE_PATT = "(.*?):(.*?)"
 CSS_PATT = ".*?{.*?\}"
 C_P = re.compile(CSS_PATT,re.DOTALL)
 space_patt = "\s+"
+EMPTY_LINE = "\s*\n\s*" # use with match 
 
 def f_read(filename):
 	f = open(filename)
@@ -64,7 +65,14 @@ def split_pages(text):
 					page_text = page_text.strip()
 					#print "processing Docid ",doc_id
 					page_text_line = smash_text(page_text)
-					print "%s\t%s" %(doc_id,page_text_line)
+					page_text_line = page_text_line.strip()
+					# checks for empty lines 
+					m = re.match(EMPTY_LINE,page_text_line)
+					if(m):
+						continue
+					page_text_line = page_text_line.strip('\n')
+					if(page_text_line):
+						print "%s\t%s" %(doc_id,page_text_line)
 					#print "DocID=",doc_id 
 					#print "URL=",url 
 					##print "TEXT=",page_text
