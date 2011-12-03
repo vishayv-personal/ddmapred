@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+import re
+import string
 import sys
 # look for module in distributed cache 
 sys.path.append('.')
@@ -11,7 +12,13 @@ import smhasher
 # mapper2 , fileid,1  for all hashes add + 1 or -1  reduce will add those u
 
 k = 8
-# TODO remove print statements and REMOVE PUNCTUATIN MARKS:
+regex = re.compile('[%s]' % re.escape(string.punctuation))
+
+# TODO remove print statements:
+
+def test_re(s):  # From Vinko's solution, with fix.
+    return regex.sub('', s)
+
 # return the num > 0 if bit is set 0 otherwise
 def testBit(l_type,offset):
 
@@ -34,7 +41,10 @@ for line in sys.stdin:
 	if( (not (doc_id)) or (not(content))):
 		print "line not formated properly"	
 		break
-	
+	# remove punctuations
+	content = test_re(content)
+	# split into an array of words 	
+ 	
 	content_arr = content.split()
 	shingle = ""
 	# if line len is less than 8 then just emit the whole line as shingle 
