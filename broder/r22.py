@@ -2,6 +2,13 @@
 
 import sys
 
+"""
+Input: (Did i \t RFP)
+Output: (Did \t  min(RFPi))
+
+"""
+
+
 dic = {}
 
 for line in sys.stdin:
